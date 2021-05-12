@@ -1,0 +1,154 @@
+<?php
+/* Smarty version 3.1.39, created on 2021-05-11 11:54:56
+  from 'C:\wamp64\www\smartyTest\templates\index.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.39',
+  'unifunc' => 'content_609a70908c49b4_86881572',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '728e5ba78202891dca67f594d4f6fb6608eb674d' => 
+    array (
+      0 => 'C:\\wamp64\\www\\smartyTest\\templates\\index.tpl',
+      1 => 1620734092,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:header.tpl' => 1,
+  ),
+),false)) {
+function content_609a70908c49b4_86881572 (Smarty_Internal_Template $_smarty_tpl) {
+?><header>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+</header>
+<body>
+<?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"><?php echo '</script'; ?>
+>
+
+<?php
+$_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "test.conf", "setup", 0);
+?>
+
+<?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'foo'), 0, false);
+?>
+
+
+<PRE>
+<div class="p-3 mb-3 bg-primary text-white">
+<h3> Hello <strong><?php echo $_smarty_tpl->tpl_vars['FirstName']->value[0];?>
+ <?php echo $_smarty_tpl->tpl_vars['LastName']->value[0];?>
+ </strong> <br> </h3>
+</div>
+<div class="p-4 mb-3 bg-light text-dark shadow-lg p-3 mb-5 bg-body rounded">
+<h4>We are glad to see you again!</h4></div> 
+<hr>
+<div class="d-inline p-2 bg-dark text-white">
+You are in the class <?php echo $_smarty_tpl->tpl_vars['Class']->value[0][1];?>
+ <br>
+</div>
+<!-- to see our list of contacts
+<br>
+<?php echo print_r($_smarty_tpl->tpl_vars['contacts']->value);?>
+ 
+-->
+
+<!-- VERSION 1
+<ul>
+You can joined the center by 
+ <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['contacts']->value, 'i', false, 'myId');
+$_smarty_tpl->tpl_vars['i']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['myId']->value => $_smarty_tpl->tpl_vars['i']->value) {
+$_smarty_tpl->tpl_vars['i']->do_else = false;
+?>
+ phone: <li><a href="item.php?id=<?php echo $_smarty_tpl->tpl_vars['myId']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value['phone'];?>
+</li>
+ fax: <li><a href="item.php?id=<?php echo $_smarty_tpl->tpl_vars['myId']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value['fax'];?>
+</li>
+ cell: <li><a href="item.php?id=<?php echo $_smarty_tpl->tpl_vars['myId']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['i']->value['cell'];?>
+</li>
+  <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+ </ul>
+-->
+
+You are in the same group as 
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"><?php echo $_smarty_tpl->tpl_vars['FirstName']->value[1];
+echo $_smarty_tpl->tpl_vars['LastName']->value[1];?>
+</button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"><?php echo $_smarty_tpl->tpl_vars['FirstName']->value[2];?>
+ <?php echo $_smarty_tpl->tpl_vars['LastName']->value[2];?>
+</button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://unsplash.com/photos/rZNTeUQG9H0" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+<hr>
+<?php echo $_smarty_tpl->tpl_vars['FirstName']->value[1];?>
+ <?php echo $_smarty_tpl->tpl_vars['LastName']->value[1];?>
+ <br>
+<?php echo $_smarty_tpl->tpl_vars['FirstName']->value[2];?>
+ <?php echo $_smarty_tpl->tpl_vars['LastName']->value[2];?>
+ <br>
+
+
+You can join the center by 
+<hr>
+<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['contacts']->value, 'item', false, 'key');
+$_smarty_tpl->tpl_vars['item']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['key']->value => $_smarty_tpl->tpl_vars['item']->value) {
+$_smarty_tpl->tpl_vars['item']->do_else = false;
+echo $_smarty_tpl->tpl_vars['key']->value;?>
+: <?php echo $_smarty_tpl->tpl_vars['item']->value;?>
+<br />
+<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+
+You can move to follow states: 
+<hr>
+<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['option_output']->value, 'item', false, 'key');
+$_smarty_tpl->tpl_vars['item']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['key']->value => $_smarty_tpl->tpl_vars['item']->value) {
+$_smarty_tpl->tpl_vars['item']->do_else = false;
+echo $_smarty_tpl->tpl_vars['item']->value;?>
+<br />
+<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?> 
+
+
+</PRE>
+</body>
+<?php }
+}
