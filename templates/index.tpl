@@ -7,8 +7,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 
 {config_load file="test.conf" section="setup"}
-{include file="header.tpl" title="Joe Agenda's"}
-
+ {include file="templates/header.tpl"}
+      <section class="container-fluid" id="content">
+        {block name=body}{/block}
+      </section>
 
 <PRE>
 <div class="p-3 mb-3 bg-primary text-white">
@@ -32,7 +34,7 @@ You are in the same group as
 {$FirstName[2]} {$LastName[2]} <br>
 
 
-You can join the center by 
+You can join your University by 
 {foreach name=number item=phone from=$contacts}
   <hr />
   {foreach key=key item=item from=$phone}
@@ -40,7 +42,11 @@ You can join the center by
   {/foreach}
 {/foreach}
 
-You can move to follow states: 
+Your time-table is 
+<hr>
+
+
+You can join student exchange university programm and move to: 
 <hr>
 <ul>
 {foreach key=key item=item from=$option_output}
@@ -48,7 +54,7 @@ You can move to follow states:
 {/foreach} 
 </ul>
 </PRE>
-
+{include file="templates/footer.tpl"}
 </body>
 </html>
 

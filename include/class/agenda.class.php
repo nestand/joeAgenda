@@ -27,7 +27,18 @@ class Agenda
     {
         $this->$key = $value;
     }
-    //get all subjects function
+    public static function getById($id){
+        if (is_numeric($id)) {
+            $conn = self::connect();
+
+            $sql = "SELECT * FROM `agenda` WHERE `id`= ? LIMIT 1";
+            $req = $conn->prepare($sql);
+            $req->setFetchMode(PDO::FETCH_CLASS, 'agenda'); 
+            $req->execute([$id]); //remplace ? by id
+            return $req->fetch();
+        }
+    } 
+        //get all subjects function
     public static function showAll()
     {
         $conn = self::connect();
