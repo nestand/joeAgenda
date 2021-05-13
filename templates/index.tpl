@@ -1,6 +1,26 @@
+
+    {if(empty($_GET['id'])){
+        header("location: index.tpl");
+        exit;
+    }
+
+    {require_once("include/agenda.class.php");
+    $event = Agenda::getById($_GET['id']);
+
+    {if($event === false){
+        header("location: index.tpl");
+        exit;
+    }
+    }
+    }
+    }
+  
 <!DOCTYPE html>
 <html lang="en">
 <header>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 </header>
 <body>
@@ -8,6 +28,7 @@
 
 {config_load file="test.conf" section="setup"}
  {include file="templates/header.tpl"}
+ 
       <section class="container-fluid" id="content">
         {block name=body}{/block}
       </section>
@@ -42,10 +63,13 @@ You can join your University by
   {/foreach}
 {/foreach}
 
-Your time-table is 
-<hr>
-
-
+ 
+ <h3>Your time-table is <small><a href="index.php"><i class="fas fa-undo-alt"></i></a></small></h3>
+ <hr>
+    <span class="info">Date : </span><?php echo $event->date;?><br>
+    <span class="info">Time : </span><?php echo $event->time;?><br>
+    <span class="info">Task : </span><?php echo $event->task;?><br>
+       
 You can join student exchange university programm and move to: 
 <hr>
 <ul>
@@ -57,4 +81,3 @@ You can join student exchange university programm and move to:
 {include file="templates/footer.tpl"}
 </body>
 </html>
-

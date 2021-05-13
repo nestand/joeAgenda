@@ -11,8 +11,8 @@ class database
 
     public static $_conn;
 
-    public static function createConnexion()
+    public static function getConnected()
     {
-        self::$_conn = new pdo("mysql:host=".self::$_host.";dbname=".self::$_bdd.";charset=UTF8", self::$_user, self::$_mdp);
+        self::$_conn = new PDO("mysql:host=".self::$_host.";dbname=".self::$_bdd.";charset=UTF8", self::$_user, self::$_mdp);
     }
 }

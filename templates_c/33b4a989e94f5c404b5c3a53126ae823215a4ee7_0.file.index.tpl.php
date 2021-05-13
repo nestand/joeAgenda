@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-12 12:41:51
+/* Smarty version 3.1.39, created on 2021-05-12 19:36:58
   from 'C:\wamp64\www\joeAgenda\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_609bcd0fb586a5_27951268',
+  'unifunc' => 'content_609c2e5a6fb037_81962935',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '33b4a989e94f5c404b5c3a53126ae823215a4ee7' => 
     array (
       0 => 'C:\\wamp64\\www\\joeAgenda\\templates\\index.tpl',
-      1 => 1620823309,
+      1 => 1620829676,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_609bcd0fb586a5_27951268 (Smarty_Internal_Template $_smarty_tpl) {
+function content_609c2e5a6fb037_81962935 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -44,7 +44,7 @@ $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "test.conf"
 ?>
       <section class="container-fluid" id="content">
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_986302666609bcd0faf51b7_78690719', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1598860194609c2e5a66f124_27168321', 'body');
 ?>
 
       </section>
@@ -106,7 +106,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 Your time-table is 
 <hr>
 
-
+   
 You can join student exchange university programm and move to: 
 <hr>
 <ul>
@@ -126,16 +126,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 <?php $_smarty_tpl->_subTemplateRender("file:templates/footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 </body>
-</html>
-
-<?php }
+</html><?php }
 /* {block 'body'} */
-class Block_986302666609bcd0faf51b7_78690719 extends Smarty_Internal_Block
+class Block_1598860194609c2e5a66f124_27168321 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_986302666609bcd0faf51b7_78690719',
+    0 => 'Block_1598860194609c2e5a66f124_27168321',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

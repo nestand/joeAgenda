@@ -6,17 +6,15 @@ class Agenda
     private $id;
     private $date;
     private $time;
-    private $name;
-    private $presence;
-    //the constructer
-    public static function build($date, $time, $name, $presence=null)
+    private $task;
+    //the builder
+    public static function build($date, $time, $task)
     {
         $obj = new static;
         $obj->id = $id;
         $obj->date = $date;
         $obj->time = $time;
-        $obj->name = $name;
-        $obj->presence = $presence;
+        $obj->task = $task;
     }
     //getter
     public function __get($key)
@@ -34,15 +32,14 @@ class Agenda
             $sql = "SELECT * FROM `agenda` WHERE `id`= ? LIMIT 1";
             $req = $conn->prepare($sql);
             $req->setFetchMode(PDO::FETCH_CLASS, 'agenda'); 
-            $req->execute([$id]); //remplace ? by id
+            $req->execute([$id]); //replace ? by id
             return $req->fetch();
         }
     } 
-        //get all subjects function
+        //get all events function
     public static function showAll()
     {
         $conn = self::connect();
-
         $sql = "SELECT * FROM `agenda`";
         $req = $conn->query($sql);
         $req->setFetchMode(PDO::FETCH_CLASS, 'agenda');
@@ -58,39 +55,34 @@ class Agenda
             return $e->getMessage();
         }
     }
-    //function to create a changement in the agenda
+    //create event function
     public function create()
     {
         $conn = self::connect();
-
-        $sql = "INSERT INTO `agenda` (nom, date, time, presence) VALUES (:nom, :date, :time, :presence);";
+        $sql = "INSERT INTO `agenda` (date, time, task) VALUES (:date, :time, :task);";
         $req = $conn->prepare($sql);
-        $req->bindValue(":nom", $this->nom);
         $req->bindValue(":date", $this->date);
         $req->bindValue(":time", $this->time);
-        $req->bindValue(":presence", $this->presence);
+        $req->bindValue(":task", $this->task);
         return $req->execute();
     }
 
-    //function to modificate the agenda
+    //update event function
     public function modif()
     {
         $conn = self::connect();
-
-        $sql = "UPDATE `agenda` SET (nom, date, time, presence) VALUES (:nom, :date, :time, :presence);";
+        $sql = "UPDATE `agenda` SET (date, time, task) VALUES (:date, :time, :task);";
         $req = $conn->prepare($sql);
-        $req->bindValue(":nom", $this->nom);
         $req->bindValue(":date", $this->date);
         $req->bindValue(":time", $this->time);
-        $req->bindValue(":presence", $this->presence);
+        $req->bindValue(":task", $this->task);
         $req->bindValue(":id", $this->id);
         return $req->execute();
     }
-    //function to delete from the agenda
+    //delete event function
     public function delete()
     {
         $conn = self::connect();
-
         $sql = "DELETE FROM `agenda` WHERE `id` = :id";
         $req = $conn->prepare($sql);
         $req->bindValue(":id", $this->id);
