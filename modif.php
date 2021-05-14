@@ -4,4 +4,9 @@ Smarty_Autoloader::register();
 require_once 'include/autoloader.php';
 Autoloader::register();
 
-$smarty->display('modif.tpl');
+$id = $_POST['id'];
+
+Agenda::modif($id);
+
+header("Location: agenda.php?agenda=updateOk");
+exit;

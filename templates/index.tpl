@@ -1,20 +1,3 @@
-
-    {if(empty($_GET['id'])){
-        header("location: index.tpl");
-        exit;
-    }
-
-    {require_once("include/agenda.class.php");
-    $event = Agenda::getById($_GET['id']);
-
-    {if($event === false){
-        header("location: index.tpl");
-        exit;
-    }
-    }
-    }
-    }
-  
 <!DOCTYPE html>
 <html lang="en">
 <header>
@@ -63,13 +46,40 @@ You can join your University by
   {/foreach}
 {/foreach}
 
- 
- <h3>Your time-table is <small><a href="index.php"><i class="fas fa-undo-alt"></i></a></small></h3>
- <hr>
-    <span class="info">Date : </span><?php echo $event->date;?><br>
-    <span class="info">Time : </span><?php echo $event->time;?><br>
-    <span class="info">Task : </span><?php echo $event->task;?><br>
-       
+ Your time-table is <a href="index.php"></a>
+  <section class="row">
+    <div class="col-8">
+      <table class="table table-striped table-hover">
+        <thead class="">
+          <tr class="bg-secondary text-white">
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Task</th>
+          </tr>
+          </thead>
+          <tbody>
+          {foreach $task as $agenda}
+          <tr>
+          <td>
+          <div class = "row">
+                <div class="col-3"><a href="agenda.php?task={$task[0]->id}"></a></div>
+                <div class="col-9"><a href="agenda.php?task={$task[0]->id}">{$task[0]->nom}</a></div> 
+              </div>
+            </td>
+             <td>
+              <form action="modif.php" method="POST">
+                <input type="hidden" name="idTask" value="{$task[0]->id}">
+                <input type="date" name="date" value="{$produits[1]}" class="form-control updateTask">
+                <input type="text" name="task" value="{$task[3]}" class="form-control updateTask">
+              </form>
+              
+            </td>
+                <td><a href="delete.php?id={$agenda[0]->id}"><button type="button" class="btn btn-outline-danger" ><i class="fas fa-trash-alt"></i></button></a></td>
+          </tr>
+          {/foreach}
+        </tbody>
+      </table>
+
 You can join student exchange university programm and move to: 
 <hr>
 <ul>

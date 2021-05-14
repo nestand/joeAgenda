@@ -4,4 +4,8 @@ Smarty_Autoloader::register();
 require_once 'include/autoloader.php';
 Autoloader::register();
 
-$smarty->display('delete.tpl');
+$id=$_GET['id'];
+
+Agenda::delete($id);
+header ("Location: agenda.php?agenda=delOk");
+exit;
