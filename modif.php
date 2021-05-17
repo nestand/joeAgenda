@@ -6,7 +6,6 @@ Autoloader::register();
 
 $id = $_POST['id'];
 
-Agenda::modif($id);
-
+$task= Agenda::modif($id);
 header("Location: agenda.php?agenda=updateOk");
 exit;

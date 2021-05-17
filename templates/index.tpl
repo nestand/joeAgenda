@@ -46,39 +46,38 @@ You can join your University by
   {/foreach}
 {/foreach}
 
- Your time-table is <a href="index.php"></a>
-  <section class="row">
-    <div class="col-8">
-      <table class="table table-striped table-hover">
-        <thead class="">
-          <tr class="bg-secondary text-white">
-            <th scope="col">Date</th>
-            <th scope="col">Time</th>
-            <th scope="col">Task</th>
-          </tr>
-          </thead>
-          <tbody>
-          {foreach $task as $agenda}
-          <tr>
-          <td>
-          <div class = "row">
-                <div class="col-3"><a href="agenda.php?task={$task[0]->id}"></a></div>
-                <div class="col-9"><a href="agenda.php?task={$task[0]->id}">{$task[0]->nom}</a></div> 
-              </div>
-            </td>
-             <td>
-              <form action="modif.php" method="POST">
-                <input type="hidden" name="idTask" value="{$task[0]->id}">
-                <input type="date" name="date" value="{$produits[1]}" class="form-control updateTask">
-                <input type="text" name="task" value="{$task[3]}" class="form-control updateTask">
-              </form>
-              
-            </td>
-                <td><a href="delete.php?id={$agenda[0]->id}"><button type="button" class="btn btn-outline-danger" ><i class="fas fa-trash-alt"></i></button></a></td>
-          </tr>
-          {/foreach}
-        </tbody>
-      </table>
+Your time-table is <a href="index.php"></a>
+<section class="row">
+ <div class="col-8">
+<table class="table table-striped table-hover">
+    <thead class="">
+        <tr class="bg-secondary text-white">
+          <th scope="col">Date</th>
+          <th scope="col">Time</th>
+          <th scope="col">Task</th>
+        </tr>
+    </thead>
+ <tbody>
+
+ {foreach $getTasks as $task}
+                    <tr>
+                        <td>{{$task->date}}</td>
+                        <td>{{$task->time}}</td>
+                        <td>{{$task->task}}</td>
+                        
+                    </tr>
+                {/foreach}
+  </tbody>
+	<tbody>        
+ 
+         <tr>
+                <td class="CRUD"><a href="create.php?id=<?php echo $task->id;?>">create</a></td>
+                <td class="CRUD"><a href="modif.php?id=<?php echo $task->id;?>">update</a></td>
+                <td class="CRUD"><a href="delete.php?id=<?php echo $task->id;?>">delete</a></td>
+         </tr>
+          
+  </tbody>
+</table>
 
 You can join student exchange university programm and move to: 
 <hr>

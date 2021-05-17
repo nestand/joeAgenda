@@ -6,6 +6,6 @@ Autoloader::register();
 
 $id=$_GET['id'];
 
-Agenda::delete($id);
+$task= Agenda::delete($id);
 header ("Location: agenda.php?agenda=delOk");
 exit;

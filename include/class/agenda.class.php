@@ -50,7 +50,7 @@ class Agenda
     public static function connect()
     {
         try {
-            return new PDO("mysql:host=localhost;dbname=contact", "root", "");
+            return new PDO("mysql:host=localhost;dbname=joe_agenda", "root", "");
         } catch (PDOException $e) {
             return $e->getMessage();
         }

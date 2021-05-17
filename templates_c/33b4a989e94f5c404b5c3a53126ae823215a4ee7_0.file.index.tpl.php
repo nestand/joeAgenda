@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-12 19:36:58
+/* Smarty version 3.1.39, created on 2021-05-17 12:44:07
   from 'C:\wamp64\www\joeAgenda\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_609c2e5a6fb037_81962935',
+  'unifunc' => 'content_60a265176cfbb5_00308954',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '33b4a989e94f5c404b5c3a53126ae823215a4ee7' => 
     array (
       0 => 'C:\\wamp64\\www\\joeAgenda\\templates\\index.tpl',
-      1 => 1620829676,
+      1 => 1621255445,
       2 => 'file',
     ),
   ),
@@ -22,13 +22,16 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_609c2e5a6fb037_81962935 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60a265176cfbb5_00308954 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <header>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 </header>
 <body>
@@ -42,9 +45,10 @@ $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "test.conf"
 
  <?php $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+ 
       <section class="container-fluid" id="content">
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1598860194609c2e5a66f124_27168321', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_123802609260a26517649fd8_77593596', 'body');
 ?>
 
       </section>
@@ -103,10 +107,64 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
-Your time-table is 
-<hr>
+Your time-table is <a href="index.php"></a>
+<section class="row">
+ <div class="col-8">
+<table class="table table-striped table-hover">
+    <thead class="">
+        <tr class="bg-secondary text-white">
+          <th scope="col">Date</th>
+          <th scope="col">Time</th>
+          <th scope="col">Task</th>
+        </tr>
+    </thead>
+ <tbody>
 
-   
+ <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['getTasks']->value, 'task');
+$_smarty_tpl->tpl_vars['task']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['task']->value) {
+$_smarty_tpl->tpl_vars['task']->do_else = false;
+?>
+                    <tr>
+                        <td><?php ob_start();
+echo $_smarty_tpl->tpl_vars['task']->value->date;
+$_prefixVariable1 = ob_get_clean();
+echo $_prefixVariable1;?>
+</td>
+                        <td><?php ob_start();
+echo $_smarty_tpl->tpl_vars['task']->value->time;
+$_prefixVariable2 = ob_get_clean();
+echo $_prefixVariable2;?>
+</td>
+                        <td><?php ob_start();
+echo $_smarty_tpl->tpl_vars['task']->value->task;
+$_prefixVariable3 = ob_get_clean();
+echo $_prefixVariable3;?>
+</td>
+                        
+                    </tr>
+                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+  </tbody>
+	<tbody>        
+ 
+         <tr>
+                <td class="CRUD"><a href="create.php?id=<?php echo '<?php ';?>
+echo $task->id;<?php echo '?>';?>
+">create</a></td>
+                <td class="CRUD"><a href="modif.php?id=<?php echo '<?php ';?>
+echo $task->id;<?php echo '?>';?>
+">update</a></td>
+                <td class="CRUD"><a href="delete.php?id=<?php echo '<?php ';?>
+echo $task->id;<?php echo '?>';?>
+">delete</a></td>
+         </tr>
+          
+  </tbody>
+</table>
+
 You can join student exchange university programm and move to: 
 <hr>
 <ul>
@@ -128,12 +186,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </body>
 </html><?php }
 /* {block 'body'} */
-class Block_1598860194609c2e5a66f124_27168321 extends Smarty_Internal_Block
+class Block_123802609260a26517649fd8_77593596 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1598860194609c2e5a66f124_27168321',
+    0 => 'Block_123802609260a26517649fd8_77593596',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
