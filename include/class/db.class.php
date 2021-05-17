@@ -26,16 +26,23 @@ class database
         $req->setFetchMode(PDO::FETCH_CLASS, "agenda");
         $req->bindValue(":id", $id);
         $req->execute();
-        return self::$req->fetch();
+        return $req->fetch();
     }
     //get all events function
     public static function showAll()
     {
+        // updated version but still "Accessing static property agenda::$id as non static"
         $sql = "SELECT * FROM `agenda`";
+        $req = self::conn()->query($sql);
+        $req->setFetchMode(PDO::FETCH_CLASS, "agenda");
+        return $req->fetchAll();
+        
+        /* old version 
         $req = self::conn()->prepare($sql);
         $req->setFetchMode(PDO::FETCH_CLASS, "agenda");
         $req->execute();
         return $req->fetchAll();
+        */    
     }
         
     //create event function

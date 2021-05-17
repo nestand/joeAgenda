@@ -77,7 +77,7 @@ Your time-table is
                     </tr>
                 </tfoot>
                 <tbody>
-                {foreach $tasks as $task}
+                {foreach $getTasks as $task}
                     <tr>
                         <td>{{$task->id}}</td>
                         <td>{{$task->date}}</td>

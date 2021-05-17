@@ -13,6 +13,9 @@ $smarty->assign("Class", array(array("A", "B", "C", "D"), array("E", "F", "G", "
 array("M", "N", "O", "P")));
 $smarty->assign("contacts", array(array("phone" => "555-4444", "fax" => "555-3333", "cell" => "760-1234")));
 $smarty->assign("option_output", array("New York", "Nebraska", "Kansas", "Iowa", "Oklahoma", "Texas"));
+$getTasks = agenda::showAll();     
+$smarty->assign('getTasks', $getTasks); 
+$smarty->display('index.tpl');
 
 
 // display the output

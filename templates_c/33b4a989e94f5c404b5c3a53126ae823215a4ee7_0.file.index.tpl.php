@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-17 23:12:41
+/* Smarty version 3.1.39, created on 2021-05-17 23:26:36
   from 'C:\wamp64\www\joeAgenda\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60a2f869efc2a0_29860355',
+  'unifunc' => 'content_60a2fbaccb6801_98622702',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '33b4a989e94f5c404b5c3a53126ae823215a4ee7' => 
     array (
       0 => 'C:\\wamp64\\www\\joeAgenda\\templates\\index.tpl',
-      1 => 1621293158,
+      1 => 1621293898,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_60a2f869efc2a0_29860355 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60a2fbaccb6801_98622702 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -50,7 +50,7 @@ $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "test.conf"
  
       <section class="container-fluid" id="content">
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_116544995460a2f869dd32c3_22827741', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_156345666060a2fbacb57361_61007690', 'body');
 ?>
 
       </section>
@@ -116,7 +116,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 Your time-table is 
 <br>
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_60637459160a2f869e619f3_29605188', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_88140875160a2fbacc030b4_89324888', 'content');
 ?>
 
 <br>
@@ -142,12 +142,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </body>
 </html><?php }
 /* {block 'body'} */
-class Block_116544995460a2f869dd32c3_22827741 extends Smarty_Internal_Block
+class Block_156345666060a2fbacb57361_61007690 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_116544995460a2f869dd32c3_22827741',
+    0 => 'Block_156345666060a2fbacb57361_61007690',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -155,12 +155,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'body'} */
 /* {block 'content'} */
-class Block_60637459160a2f869e619f3_29605188 extends Smarty_Internal_Block
+class Block_88140875160a2fbacc030b4_89324888 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_60637459160a2f869e619f3_29605188',
+    0 => 'Block_88140875160a2fbacc030b4_89324888',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -189,7 +189,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 </tfoot>
                 <tbody>
                 <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['tasks']->value, 'task');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['getTasks']->value, 'task');
 $_smarty_tpl->tpl_vars['task']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['task']->value) {
 $_smarty_tpl->tpl_vars['task']->do_else = false;
