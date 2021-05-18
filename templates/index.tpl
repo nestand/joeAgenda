@@ -13,8 +13,7 @@
 
 {config_load file="test.conf" section="setup"}
  {include file="templates/header.tpl"}
- 
-      <section class="container-fluid" id="content">
+       <section class="container-fluid" id="content">
         {block name=body}{/block}
       </section>
 
@@ -55,6 +54,7 @@ You can join your University by
 Your time-table is 
 <br>
 {block name=content}
+    
     <div class="row">
         <div class="col-12">
             <table class="table table-striped table-hover" id="agenda">
@@ -64,7 +64,7 @@ Your time-table is
                         <th>Date</th>
                         <th>Time</th>
                         <th>Task</th>
-                        <th colspan="2" class="text-center"><a href="create" class="btn btn-outline-success btn-block"><i class="fas fa-plus"></i></a></th>
+                        <th colspan="2" class="text-center"><a href="add" class="btn btn-outline-success btn-block"><i class="fas fa-plus"></i></a></th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -77,7 +77,7 @@ Your time-table is
                     </tr>
                 </tfoot>
                 <tbody>
-                {foreach $getTasks as $task}
+                {foreach $tasks as $task}
                     <tr>
                         <td>{{$task->id}}</td>
                         <td>{{$task->date}}</td>

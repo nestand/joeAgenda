@@ -1,11 +1,11 @@
 <?php
 class agenda
 {
-    //main variables
-    public static $id;
-    public static $date;
-    public static $time;
-    public static $task;
+    //main variables. Ne pas mettre statiques! 
+    public $id;
+    public $date;
+    public $time;
+    public $task;
     
     //the builder
     public static function build($date, $time, $task)
@@ -14,7 +14,7 @@ class agenda
         $obj->id   = $id;
         $obj->date = $date;
         $obj->time = $time;
-        $obj->task = $id;
+        $obj->task = $task;
 
         return $obj;
     }

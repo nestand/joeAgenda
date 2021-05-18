@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-17 23:26:36
+/* Smarty version 3.1.39, created on 2021-05-18 08:26:58
   from 'C:\wamp64\www\joeAgenda\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60a2fbaccb6801_98622702',
+  'unifunc' => 'content_60a37a52008223_96787789',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '33b4a989e94f5c404b5c3a53126ae823215a4ee7' => 
     array (
       0 => 'C:\\wamp64\\www\\joeAgenda\\templates\\index.tpl',
-      1 => 1621293898,
+      1 => 1621326409,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_60a2fbaccb6801_98622702 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60a37a52008223_96787789 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -47,10 +47,9 @@ $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "test.conf"
 
  <?php $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
- 
-      <section class="container-fluid" id="content">
+       <section class="container-fluid" id="content">
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_156345666060a2fbacb57361_61007690', 'body');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_179056470660a37a51e9dab0_67556287', 'body');
 ?>
 
       </section>
@@ -116,7 +115,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 Your time-table is 
 <br>
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_88140875160a2fbacc030b4_89324888', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_133491112460a37a51efbdb1_21546232', 'content');
 ?>
 
 <br>
@@ -142,12 +141,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </body>
 </html><?php }
 /* {block 'body'} */
-class Block_156345666060a2fbacb57361_61007690 extends Smarty_Internal_Block
+class Block_179056470660a37a51e9dab0_67556287 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_156345666060a2fbacb57361_61007690',
+    0 => 'Block_179056470660a37a51e9dab0_67556287',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -155,17 +154,18 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'body'} */
 /* {block 'content'} */
-class Block_88140875160a2fbacc030b4_89324888 extends Smarty_Internal_Block
+class Block_133491112460a37a51efbdb1_21546232 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_88140875160a2fbacc030b4_89324888',
+    0 => 'Block_133491112460a37a51efbdb1_21546232',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
+    
     <div class="row">
         <div class="col-12">
             <table class="table table-striped table-hover" id="agenda">
@@ -175,7 +175,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                         <th>Date</th>
                         <th>Time</th>
                         <th>Task</th>
-                        <th colspan="2" class="text-center"><a href="create" class="btn btn-outline-success btn-block"><i class="fas fa-plus"></i></a></th>
+                        <th colspan="2" class="text-center"><a href="add" class="btn btn-outline-success btn-block"><i class="fas fa-plus"></i></a></th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -189,7 +189,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 </tfoot>
                 <tbody>
                 <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['getTasks']->value, 'task');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['tasks']->value, 'task');
 $_smarty_tpl->tpl_vars['task']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['task']->value) {
 $_smarty_tpl->tpl_vars['task']->do_else = false;

@@ -13,9 +13,10 @@ $smarty->assign("Class", array(array("A", "B", "C", "D"), array("E", "F", "G", "
 array("M", "N", "O", "P")));
 $smarty->assign("contacts", array(array("phone" => "555-4444", "fax" => "555-3333", "cell" => "760-1234")));
 $smarty->assign("option_output", array("New York", "Nebraska", "Kansas", "Iowa", "Oklahoma", "Texas"));
+$smarty->debugging=true; 
 $getTasks = agenda::showAll();     
-$smarty->assign('getTasks', $getTasks); 
-$smarty->display('index.tpl');
+//$smarty->assign('getTasks', $getTasks); 
+//$smarty->display('index.tpl');
 
 
 // display the output
@@ -32,22 +33,22 @@ if(isset($_POST['action'])){
     if(!empty($newTask)){
         $newTask->create();
     }
-   header("Location: templates/index.tpl");
+   header("Location: index.tpl");
    exit;
 }
 
 switch($_GET['templates']){
-    case "create":
-        $smarty->display('templates/create.tpl');
+    case "add":
+        $smarty->display('create.tpl');
         break;
-    case "modif":
+    case "update":
         $task = agenda::getById($_GET["id"]);
         $smarty->assign("task", $task);
-        $smarty->display('templates/modif.tpl');
+        $smarty->display('modif.tpl');
         break;
     case "delete":
         agenda::delete($_GET["id"]);
-        header("templates/delete.tpl");
+        header('index.tpl');
         break;
     default:
         $tasks = agenda::showAll();
@@ -55,3 +56,4 @@ switch($_GET['templates']){
         $smarty->display('index.tpl');
         break;
 }
+

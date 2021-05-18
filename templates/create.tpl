@@ -1,7 +1,7 @@
 {extends file="templates/index.tpl"}
 {include file="templates/header.tpl"}
 {block name=content}
-    <form name="createTask" method="POST" action="add">
+    <form name="add" method="POST" action="add">
         <label for="date">Date</label>
         <input type="date" name="date" id="date" placeholder="Date" class="form-control">
         <label for="task">Task</label>
