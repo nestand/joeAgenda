@@ -37,7 +37,7 @@ if(isset($_POST['action'])){
    exit;
 }
 
-switch($_GET['templates']){
+switch($_GET['page']){
     case "add":
         $smarty->display('create.tpl');
         break;

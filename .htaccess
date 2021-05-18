@@ -1,0 +1,7 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+RewriteRule (.*)/(.*) index.php?page=$1&id=$2 [L]
+
+RewriteCond %{REQUEST_URI} !index.php
+RewriteRule (.*) index.php?page=$1

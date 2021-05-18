@@ -1,7 +1,7 @@
 <?php
 class agenda
 {
-    //main variables. Ne pas mettre statiques! 
+    //main variables. N'est pas mettre statiques! 
     public $id;
     public $date;
     public $time;
